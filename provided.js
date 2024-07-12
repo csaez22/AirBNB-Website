@@ -104,16 +104,17 @@ const SearchResults = {
     
     let tempPriceArray = []
     if(this.cityFilter == undefined){
-      for (let i = 0; i < 18; i++){
+      for (const i of this.typeIndices){
         tempPriceArray.push(listings[this.cityIndices[i]].price)
       }
+      console.log(`array for filterbyprice: ${tempPriceArray}`)
     }
     else {
       for (let i = 0; i < this.cityIndices.length; i++) {
         tempPriceArray.push(listings[this.cityIndices[i]].price)
       }
     }
-    
+
     let indices =
       filterByPrice(this.minPriceFilter, this.maxPriceFilter, tempPriceArray);
     if (!this.validateListingIndices(indices)) {
