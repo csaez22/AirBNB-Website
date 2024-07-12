@@ -100,7 +100,7 @@ const SearchResults = {
   },
 
   filterByPrice: function() {
-    console.log(`shownListings: ${shownListings}\ntypeIndices: ${typeIndices}\ncityIndices: ${cityIndices}\ncityFilter: ${cityFilter}`)
+    console.log(`shownListings: ${this.shownListings}\ntypeIndices: ${this.typeIndices}\ncityIndices: ${this.cityIndices}\ncityFilter: ${this.cityFilter}`)
     let tempPriceArray = []
     for (let i = 0; i < this.cityIndices.length; i++) {
       tempPriceArray.push(listings[this.cityIndices[i]].price)
