@@ -6,7 +6,7 @@ function filterByCity(targetCity, listingCityArray) {
       listingIndexes.push(i);
     }
   }
-  console.log("\nfilterByCity listingIndexes: " + listingIndexes + "\ntargetCity: " + targetCity + "\nlistingCityArray: " + listingCityArray)
+  // console.log("\nfilterByCity listingIndexes: " + listingIndexes + "\ntargetCity: " + targetCity + "\nlistingCityArray: " + listingCityArray)
   return listingIndexes;
   /* This return statement is here to show you what the UI looks like and will put every listing onto the page no matter what you search for. Remove the return statement before you start this function. */
   // return [...listingCityArray.keys()];
@@ -20,7 +20,7 @@ function filterByPrice(minPrice, maxPrice, listingPriceArray) {
       listingIndexes.push(i);
     }
   }
-  console.log("\nfilterByPrice listingIndexes: " + listingIndexes + "\nlistingPriceArray: " + listingPriceArray)
+  // console.log("\nfilterByPrice listingIndexes: " + listingIndexes + "\nlistingPriceArray: " + listingPriceArray)
   return listingIndexes;
   /* This return statement here to show you what the UI looks like and will put every listing onto the page no matter what you search for. Remove the return statement before you start this function. */
   // return [...listingPriceArray.keys()];
@@ -38,7 +38,7 @@ function filterByTypes(targetTypes, listingTypeArray) {
       }
     }
   }
-  console.log("\nfilterByTypes listingIndexes: " + listingIndexes + "\ntargetTypes: " + targetTypes + "\nlistingTypeArray: " + listingTypeArray)
+  // console.log("\nfilterByTypes listingIndexes: " + listingIndexes + "\ntargetTypes: " + targetTypes + "\nlistingTypeArray: " + listingTypeArray)
   return listingIndexes;
   /* This return statement here to show you what the UI looks like and will put every listing onto the page no matter what you search for. Remove the return statement before you start this function. */
   // return [...listingTypeArray.keys()];

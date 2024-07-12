@@ -71,6 +71,7 @@ const SearchResults = {
   filterByCity: function() {
     this.cityIndices = [];
     if (this.cityFilter == undefined) {
+      console.log("cityFilter == undefined")
       return;
     }
     let indices = filterByCity(this.cityFilter,
