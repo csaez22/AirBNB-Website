@@ -101,10 +101,19 @@ const SearchResults = {
 
   filterByPrice: function() {
     console.log(`shownListings: ${this.shownListings}\ntypeIndices: ${this.typeIndices}\ncityIndices: ${this.cityIndices}\ncityFilter: ${this.cityFilter}`)
+    
     let tempPriceArray = []
-    for (let i = 0; i < this.cityIndices.length; i++) {
-      tempPriceArray.push(listings[this.cityIndices[i]].price)
+    if(this.cityFilter == undefined){
+      for (let i = 0; i < 18; i++){
+        tempPriceArray.push(listings[this.cityIndices[i]].price)
+      }
     }
+    else {
+      for (let i = 0; i < this.cityIndices.length; i++) {
+        tempPriceArray.push(listings[this.cityIndices[i]].price)
+      }
+    }
+    
     let indices =
       filterByPrice(this.minPriceFilter, this.maxPriceFilter, tempPriceArray);
     if (!this.validateListingIndices(indices)) {
