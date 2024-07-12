@@ -100,6 +100,7 @@ const SearchResults = {
   },
 
   filterByPrice: function() {
+    console.log(`shownListings: ${shownListings}\ntypeIndices: ${typeIndices}\ncityIndices: ${cityIndices}\ncityFilter: ${cityFilter}`)
     let tempPriceArray = []
     for (let i = 0; i < this.cityIndices.length; i++) {
       tempPriceArray.push(listings[this.cityIndices[i]].price)
@@ -169,7 +170,10 @@ const SearchResults = {
 
 function checkInputAndDisplay() {
   const cityFilter = _searchInputElement.value.trim();
-  if (cityFilter) {
+  if (cityFilter && cityFilter.toUpperCase() == "ALL"){
+    displayAll();
+  }
+  else if (cityFilter) {
     SearchResults.cityFilter = cityFilter;
     SearchResults.update();
   } else {
