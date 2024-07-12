@@ -105,7 +105,7 @@ const SearchResults = {
     let tempPriceArray = []
     if(this.cityFilter == undefined){
       for (const i of this.typeIndices){
-        tempPriceArray.push(listings[this.cityIndices[i]].price)
+        tempPriceArray.push(listings[i].price)
       }
       console.log(`array for filterbyprice: ${tempPriceArray}`)
     }
