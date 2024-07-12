@@ -171,12 +171,14 @@ const SearchResults = {
 function checkInputAndDisplay() {
   const cityFilter = _searchInputElement.value.trim();
   if (cityFilter && cityFilter.toUpperCase() == "ALL"){
+    this.cityFilter = undefined;
     displayAll();
   }
   else if (cityFilter) {
     SearchResults.cityFilter = cityFilter;
     SearchResults.update();
   } else {
+    this.cityFilter = undefined;
     displayAll();
   }
 }
