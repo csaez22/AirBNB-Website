@@ -94,9 +94,10 @@ const SearchResults = {
       return;
     }
     this.shownListings = [];
-    for (let i = 0; i < indices.length; i++) {
-      this.typeIndices.push(indices[i]);
-    }
+    // for (let i = 0; i < indices.length; i++) {
+    //   this.typeIndices.push(indices[i]);
+    // } MORE CONCISE:
+    this.typeIndices = indices;
   },
 
   filterByPrice: function() {
@@ -136,8 +137,21 @@ const SearchResults = {
       _listingContainerElement.innerHTML = _searchFunctionErrorHTML;
       return;
     }
+
+    // Fixing empty cityIndices
+    console.log(this.cityFilter);
+    if(this.cityFilter == "" || this.cityFilter == undefined){
+      this.cityIndices = [...Array(18).keys()];
+    }
     for (let i = 0; i < this.shownListings.length; i++) {
+      // THIS FOLLOWING LINE IS VERY PROBLEMATIC
       let type = listings[this.cityIndices[this.typeIndices[this.shownListings[i]]]].type;
+      // NEW CODE:
+      // let typeIndex = this.typeIndices[this.shownListings[i]];
+      // let
+      // let type = thi
+      // let finalIndex = 
+
       if (type == "entire-place") {
         type = "Entire Place";
       } else if (type == "private-room") {
